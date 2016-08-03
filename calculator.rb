@@ -1,4 +1,5 @@
 @op_array = ['+', '-', '/', '*']
+@history = []
 
 def main
   puts "Welcome to the Ruby Calculator"
@@ -10,7 +11,10 @@ end
 def new_menu
   puts "1. Start with last answer?"
   puts "2. Clear calculator"
-  puts "3. Exit"
+  puts "3. Calculator History"
+  puts "4. Enter formula"
+  puts "5. Exit"
+
   start_again = gets.to_i
     if start_again == 1
       puts "#{@answer} is your first number"
@@ -18,6 +22,10 @@ def new_menu
       operators
     elsif start_again == 2
       main
+    elsif start_again == 3
+      calc_history
+    elsif start_again == 4
+      string_input
     else
       exit 0
     end
@@ -57,6 +65,7 @@ def second
       @answer = @first_number * @second_number
     end
   end
+  @history << "#{@first_number} #{@operator} #{@second_number} = #{@answer}"
   calculate
 end
 
@@ -66,5 +75,22 @@ def calculate
   new_menu
 end
 
+def calc_history
+  @history.each do |formulas|
+    puts formulas
+  end
+  new_menu
+end
 
+def string_input
+  puts "What is your equation?"
+  equation = gets.strip.split(' ')
+  array_calculate(equation)
+end
+
+def array_calculate(array)
+  num1 = array[0]
+  opand = array[1]
+  num2 = array[2]
+end
 main
