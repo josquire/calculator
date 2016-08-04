@@ -9,10 +9,10 @@ def main
 end
 
 def new_menu
-  puts "1. Start with last answer?"
+  puts "\n1. Start with last answer?"
   puts "2. Clear calculator"
   puts "3. Calculator History"
-  puts "4. Enter formula"
+  puts "4. Enter your equation"
   puts "5. Exit"
 
   start_again = gets.to_i
@@ -71,7 +71,7 @@ end
 
 def calculate
   puts "Calculating..."
-  puts "The Result of #{@first_number} #{@operator} #{@second_number} is #{@answer}"
+  puts "\nThe Result of #{@first_number} #{@operator} #{@second_number} is #{@answer}"
   new_menu
 end
 
@@ -92,5 +92,7 @@ def array_calculate(array)
   num1 = array[0]
   opand = array[1]
   num2 = array[2]
+# I don't know what to do with this now
 end
+
 main
