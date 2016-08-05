@@ -30,7 +30,6 @@ def new_menu
       exit 0
     end
 end
-
 def operators
   puts 'What is the operator?'
   @operator = gets.strip
